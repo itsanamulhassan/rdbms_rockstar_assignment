@@ -72,4 +72,11 @@ GROUP BY r.name ORDER BY r.name;
 -- 5️⃣ List species that have never been sighted.
 SELECT common_name FROM sightings FULL JOIN species USING(species_id) WHERE sighting_id IS NULL;
 
+-- 6️⃣ Show the most recent 2 sightings.
+
+SELECT common_name, sighting_time,  "name"         FROM sightings JOIN species USING(species_id) JOIN rangers USING(ranger_id) ORDER BY sighting_time DESC LIMIT 2;
+
+-- 7️⃣ Update all species discovered before year 1800 to have status 'Historic'.
+UPDATE species SET conservation_status = 'Historic' WHERE extract( YEAR FROM discovery_date) < 1800;
+
 
