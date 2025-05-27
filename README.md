@@ -88,16 +88,16 @@ RIGHT JOIN, FULL JOIN ইত্যাদি
 
 ```
 SELECT r.name, s.common_name
-FROM rangers r
-JOIN sightings si ON r.ranger_id = si.ranger_id
-JOIN species s ON si.species_id = s.species_id;
+FROM rangersb AS r
+JOIN sightings AS si ON r.ranger_id = si.ranger_id
+JOIN species AS s ON si.species_id = s.species_id;
 ```
 
 এটি দেখাবে প্রত্যেক রেঞ্জার কোন প্রাণী দেখেছেন।
 
 ---
 
-9. GROUP BY ক্লজ কী এবং Aggregation-এ এর ভূমিকা কী?
+8. GROUP BY ক্লজ কী এবং Aggregation-এ এর ভূমিকা কী?
 
 GROUP BY ব্যবহার করে একই টাইপের রেকর্ডগুলো একত্রিত করে উপর তাদের ভিত্তিতে গণনা বা অন্যান্য অপারেশন করা হয়।
 
