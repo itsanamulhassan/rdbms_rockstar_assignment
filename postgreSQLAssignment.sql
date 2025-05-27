@@ -117,6 +117,5 @@ FROM sightings
 ORDER BY sighting_id;
 
 -- 9️⃣ Delete rangers who have never sighted any species
-
 DELETE FROM rangers
 WHERE ranger_id NOT IN (SELECT ranger_id FROM sightings);
