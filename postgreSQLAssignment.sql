@@ -45,3 +45,14 @@ INSERT INTO sightings (sighting_id, species_id, ranger_id, "location", sighting_
 (4, 1, 2, 'Snowfall Pass', '2024-05-18 18:30:00', NULL);
 
 
+DROP TABLE rangers;
+DROP TABLE species;
+DROP TABLE sightings;
+
+SELECT * FROM rangers;
+SELECT * FROM species;
+SELECT * FROM sightings;
+
+-- 1️⃣ Register a new ranger with provided data with name = 'Derek Fox' and region = 'Coastal Plains'
+INSERT INTO rangers ("name", region) VALUES('Derek Fox', 'Coastal Plains');
+
