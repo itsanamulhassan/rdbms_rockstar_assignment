@@ -94,9 +94,9 @@ WHERE sightings.sighting_id IS NULL;
 
 -- 6️⃣ Show the most recent 2 sightings with species name and ranger name
 SELECT s.common_name, sg.sighting_time, r."name"
-FROM sightings sg
-JOIN species s USING(species_id)
-JOIN rangers r USING(ranger_id)
+FROM sightings AS sg
+JOIN species AS s USING(species_id)
+JOIN rangers AS r USING(ranger_id)
 ORDER BY sg.sighting_time DESC
 LIMIT 2;
 
