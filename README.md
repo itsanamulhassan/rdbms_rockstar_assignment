@@ -97,7 +97,7 @@ JOIN species AS s ON si.species_id = s.species_id;
 
 ---
 
-8. GROUP BY ক্লজ কী এবং Aggregation-এ এর ভূমিকা কী?
+### 8. GROUP BY ক্লজ কী এবং Aggregation-এ এর ভূমিকা কী?
 
 GROUP BY ব্যবহার করে একই টাইপের রেকর্ডগুলো একত্রিত করে উপর তাদের ভিত্তিতে গণনা বা অন্যান্য অপারেশন করা হয়।
 
