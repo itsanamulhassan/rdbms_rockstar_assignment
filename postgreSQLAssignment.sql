@@ -79,4 +79,22 @@ SELECT common_name, sighting_time,  "name"         FROM sightings JOIN species U
 -- 7️⃣ Update all species discovered before year 1800 to have status 'Historic'.
 UPDATE species SET conservation_status = 'Historic' WHERE extract( YEAR FROM discovery_date) < 1800;
 
+-- 8️⃣ Label each sighting's time of day as 'Morning', 'Afternoon', or 'Evening'.
 
+SELECT
+  sighting_id,
+  CASE
+    WHEN EXTRACT(HOUR FROM sighting_time) < 12 THEN 'Morning'
+    WHEN EXTRACT(HOUR FROM sighting_time) BETWEEN 12 AND 16 THEN 'Afternoon'
+    ELSE 'Evening'
+  END AS time_of_day
+FROM sightings
+ORDER BY sighting_id;
+
+
+-- 9️⃣ Delete rangers who have never sighted any species
+
+INSERT INTO rangers (ranger_id, "name", region) VALUES
+(4, 'Robert Greene', 'Northern Hills');
+DELETE FROM rangers
+WHERE ranger_id NOT IN (SELECT ranger_id FROM sightings);
